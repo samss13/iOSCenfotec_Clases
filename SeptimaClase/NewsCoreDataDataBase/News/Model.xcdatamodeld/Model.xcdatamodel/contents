@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="CDCategory" representedClassName="CDCategory" syncable="YES">
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <relationship name="news" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDNews" inverseName="category" inverseEntity="CDNews" syncable="YES"/>
+    </entity>
+    <entity name="CDNews" representedClassName="CDNews" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="descriptionNews" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleNews" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDCategory" inverseName="news" inverseEntity="CDCategory" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDCategory" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="CDNews" positionX="-54" positionY="18" width="128" height="105"/>
+    </elements>
+</model>
